@@ -47,7 +47,7 @@ open class QSBaseTableViewCell: UITableViewCell, QSBaseViewProtocol {
     // 下划线
     var lineView: UIView?
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         qs_setupSubViews()
         qs_binding()

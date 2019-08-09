@@ -9,7 +9,7 @@
 import UIKit
 
 open class QSBaseTableViewHeaderFooterView: UITableViewHeaderFooterView, QSBaseViewProtocol {
-    override init(reuseIdentifier: String?) {
+    override public init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         qs_setupSubViews()
         qs_binding()

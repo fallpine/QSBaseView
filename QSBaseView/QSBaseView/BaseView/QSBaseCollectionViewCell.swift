@@ -9,7 +9,7 @@
 import UIKit
 
 open class QSBaseCollectionViewCell: UICollectionViewCell, QSBaseViewProtocol {
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         qs_setupSubViews()
         qs_binding()
