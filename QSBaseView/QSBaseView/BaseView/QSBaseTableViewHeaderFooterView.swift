@@ -8,14 +8,14 @@
 
 import UIKit
 
-public class QSBaseTableViewHeaderFooterView: UITableViewHeaderFooterView {
+open class QSBaseTableViewHeaderFooterView: UITableViewHeaderFooterView {
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         qs_setupSubViews()
         qs_binding()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }

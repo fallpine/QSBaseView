@@ -8,14 +8,14 @@
 
 import UIKit
 
-public class QSBaseCollectionViewCell: UICollectionViewCell {
+open class QSBaseCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         qs_setupSubViews()
         qs_binding()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }

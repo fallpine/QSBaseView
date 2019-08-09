@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-public class QSBaseTableViewCell: UITableViewCell {
+open class QSBaseTableViewCell: UITableViewCell {
     // MARK: - 属性
     /// 下划线左边距
     var lineLeftMargin: CGFloat = 0.0 {
@@ -53,7 +53,7 @@ public class QSBaseTableViewCell: UITableViewCell {
         qs_binding()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }

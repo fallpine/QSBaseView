@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "QSBaseView"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.2"
   spec.summary      = "控件基类."
 
   # This description is used to generate tags and improve search results.
@@ -78,7 +78,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://github.com/fallpine/QSBaseView.git", :tag => "0.0.1" }
+  spec.source       = { :git => "https://github.com/fallpine/QSBaseView.git", :tag => "0.0.2" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -133,7 +133,7 @@ Pod::Spec.new do |spec|
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # spec.dependency "JSONKit", "~> 1.4"
 
-    spec.dependency "SnapKit"
+    spec.dependency "SnapKit", "~> 4.2.0"
     spec.swift_version = '4.2'
 
 end
