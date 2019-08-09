@@ -1,5 +1,6 @@
 # QSBaseView
 视图控件基类
+
 使用方法：直接用Pod导入，pod 'QSBaseView'
 
 在项目开发中，经常会自定义视图控件，一般都会重写系统的initWithFrame方法，但在swift中，重写init方法，都必须要重写
