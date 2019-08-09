@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class QSBaseView: UIView {
+open class QSBaseView: UIView, QSBaseViewProtocol {
     override init(frame: CGRect) {
         super.init(frame: frame)
         qs_setupSubViews()
@@ -18,12 +18,11 @@ open class QSBaseView: UIView {
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-}
-
-extension QSBaseView: QSBaseViewProtocol {
-    public func qs_setupSubViews() {
+    
+    // MARK: - QSBaseViewProtocol
+    open func qs_setupSubViews() {
     }
     
-    public func qs_binding() {
+    open func qs_binding() {
     }
 }

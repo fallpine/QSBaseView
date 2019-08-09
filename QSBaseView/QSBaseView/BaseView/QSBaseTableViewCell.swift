@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-open class QSBaseTableViewCell: UITableViewCell {
+open class QSBaseTableViewCell: UITableViewCell, QSBaseViewProtocol {
     // MARK: - 属性
     /// 下划线左边距
     var lineLeftMargin: CGFloat = 0.0 {
@@ -56,10 +56,9 @@ open class QSBaseTableViewCell: UITableViewCell {
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-}
-
-extension QSBaseTableViewCell: QSBaseViewProtocol {
-    public func qs_setupSubViews() {
+    
+    // MARK: - QSBaseViewProtocol
+    open func qs_setupSubViews() {
         // lineView
         lineView = UIView.init()
         self.contentView.addSubview(lineView!)
@@ -71,6 +70,6 @@ extension QSBaseTableViewCell: QSBaseViewProtocol {
         self.selectionStyle = .none
     }
     
-    public func qs_binding() {
+    open func qs_binding() {
     }
 }

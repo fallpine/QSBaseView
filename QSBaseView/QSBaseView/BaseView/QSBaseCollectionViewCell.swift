@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class QSBaseCollectionViewCell: UICollectionViewCell {
+open class QSBaseCollectionViewCell: UICollectionViewCell, QSBaseViewProtocol {
     override init(frame: CGRect) {
         super.init(frame: frame)
         qs_setupSubViews()
@@ -18,12 +18,11 @@ open class QSBaseCollectionViewCell: UICollectionViewCell {
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-}
-
-extension QSBaseCollectionViewCell: QSBaseViewProtocol {
-    public func qs_setupSubViews() {
+    
+    // MARK: - QSBaseViewProtocol
+    open func qs_setupSubViews() {
     }
     
-    public func qs_binding() {
+    open func qs_binding() {
     }
 }
