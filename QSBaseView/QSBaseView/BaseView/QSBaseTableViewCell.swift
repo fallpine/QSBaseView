@@ -12,7 +12,7 @@ import SnapKit
 open class QSBaseTableViewCell: UITableViewCell, QSBaseViewProtocol {
     // MARK: - 属性
     /// 下划线左边距
-    var lineLeftMargin: CGFloat = 0.0 {
+    public var lineLeftMargin: CGFloat = 0.0 {
         didSet {
             self.lineView?.snp.updateConstraints({ (make) in
                 make.left.equalTo(lineLeftMargin)
@@ -21,7 +21,7 @@ open class QSBaseTableViewCell: UITableViewCell, QSBaseViewProtocol {
     }
     
     /// 下划线右边距
-    var lineRightMargin: CGFloat = 0.0 {
+    public var lineRightMargin: CGFloat = 0.0 {
         didSet {
             self.lineView?.snp.updateConstraints({ (make) in
                 make.right.equalTo(lineRightMargin)
@@ -30,14 +30,14 @@ open class QSBaseTableViewCell: UITableViewCell, QSBaseViewProtocol {
     }
     
     /// 下划线颜色
-    var lineColor: UIColor = .black {
+    public var lineColor: UIColor = .black {
         didSet {
             self.lineView?.backgroundColor = lineColor
         }
     }
     
     /// 是否隐藏下划线
-    var isHideSeparatorLine: Bool = true {
+    public var isHideSeparatorLine: Bool = true {
         didSet {
             self.lineView?.isHidden = isHideSeparatorLine
         }
@@ -45,7 +45,7 @@ open class QSBaseTableViewCell: UITableViewCell, QSBaseViewProtocol {
     
     // MARK: - 控件
     // 下划线
-    var lineView: UIView?
+    public var lineView: UIView?
     
     override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
