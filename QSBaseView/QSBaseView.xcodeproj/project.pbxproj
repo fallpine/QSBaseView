@@ -18,6 +18,7 @@
 		04B59FDF22FD16C5008511AF /* QSBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B59FDA22FD16C5008511AF /* QSBaseTableViewCell.swift */; };
 		04B59FE022FD16C5008511AF /* QSBaseViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B59FDB22FD16C5008511AF /* QSBaseViewProtocol.swift */; };
 		04B59FE222FD1A7F008511AF /* QSMyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B59FE122FD1A7F008511AF /* QSMyView.swift */; };
+		04C21B3D23630A7300B288D5 /* QSBaseCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C21B3C23630A7300B288D5 /* QSBaseCollectionReusableView.swift */; };
 		690CBB2BAEB48598F1344839 /* Pods_QSBaseView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9CB680F3CE37CBB318B6345 /* Pods_QSBaseView.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		04B59FDA22FD16C5008511AF /* QSBaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSBaseTableViewCell.swift; sourceTree = "<group>"; };
 		04B59FDB22FD16C5008511AF /* QSBaseViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSBaseViewProtocol.swift; sourceTree = "<group>"; };
 		04B59FE122FD1A7F008511AF /* QSMyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QSMyView.swift; sourceTree = "<group>"; };
+		04C21B3C23630A7300B288D5 /* QSBaseCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QSBaseCollectionReusableView.swift; sourceTree = "<group>"; };
 		3D11FE8AEE2078621AD3ACDB /* Pods-QSBaseView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QSBaseView.release.xcconfig"; path = "Target Support Files/Pods-QSBaseView/Pods-QSBaseView.release.xcconfig"; sourceTree = "<group>"; };
 		E27268C078D301963B06124D /* Pods-QSBaseView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QSBaseView.debug.xcconfig"; path = "Target Support Files/Pods-QSBaseView/Pods-QSBaseView.debug.xcconfig"; sourceTree = "<group>"; };
 		F9CB680F3CE37CBB318B6345 /* Pods_QSBaseView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QSBaseView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +90,7 @@
 		04B59FD622FD16BB008511AF /* BaseView */ = {
 			isa = PBXGroup;
 			children = (
+				04C21B3C23630A7300B288D5 /* QSBaseCollectionReusableView.swift */,
 				04B59FD822FD16C5008511AF /* QSBaseCollectionViewCell.swift */,
 				04B59FDA22FD16C5008511AF /* QSBaseTableViewCell.swift */,
 				04B59FD922FD16C5008511AF /* QSBaseTableViewHeaderFooterView.swift */,
@@ -231,6 +234,7 @@
 			files = (
 				04B59FC722FD169B008511AF /* ViewController.swift in Sources */,
 				04B59FDE22FD16C5008511AF /* QSBaseTableViewHeaderFooterView.swift in Sources */,
+				04C21B3D23630A7300B288D5 /* QSBaseCollectionReusableView.swift in Sources */,
 				04B59FDF22FD16C5008511AF /* QSBaseTableViewCell.swift in Sources */,
 				04B59FDC22FD16C5008511AF /* QSBaseView.swift in Sources */,
 				04B59FC522FD169B008511AF /* AppDelegate.swift in Sources */,
