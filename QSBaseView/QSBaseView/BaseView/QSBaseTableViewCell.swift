@@ -11,44 +11,56 @@ import SnapKit
 
 open class QSBaseTableViewCell: UITableViewCell, QSBaseViewProtocol {
     // MARK: - 属性
-    /// 下划线左边距
-    public var lineLeftMargin: CGFloat = 0.0 {
+    /// 分隔线左边距
+    public var separatorLineLeftMargin: CGFloat = 0.0 {
         didSet {
-            self.lineView?.snp.updateConstraints({ (make) in
-                make.left.equalTo(lineLeftMargin)
+            separatorLineView.snp.updateConstraints({ (make) in
+                make.left.equalTo(separatorLineLeftMargin)
             })
         }
     }
     
-    /// 下划线右边距
-    public var lineRightMargin: CGFloat = 0.0 {
+    /// 分隔线右边距
+    public var separatorLineRightMargin: CGFloat = 0.0 {
         didSet {
-            self.lineView?.snp.updateConstraints({ (make) in
-                make.right.equalTo(lineRightMargin)
+            separatorLineView.snp.updateConstraints({ (make) in
+                make.right.equalTo(separatorLineRightMargin)
             })
         }
     }
     
-    /// 下划线颜色
-    public var lineColor: UIColor = .black {
+    /// 分隔线颜色
+    public var separatorLineColor: UIColor = .black {
         didSet {
-            self.lineView?.backgroundColor = lineColor
+            separatorLineView.backgroundColor = separatorLineColor
         }
     }
     
-    /// 是否隐藏下划线
-    public var isHideSeparatorLine: Bool = true {
+    /// 分隔线高度
+    public var separatorLineHeight: CGFloat = 0.0 {
         didSet {
-            self.lineView?.isHidden = isHideSeparatorLine
+            separatorLineView.snp.updateConstraints({ (make) in
+                make.height.equalTo(separatorLineHeight)
+            })
         }
     }
     
-    // MARK: - 控件
-    // 下划线
-    public var lineView: UIView?
+    /// 是否隐藏分隔线
+    public var isHiddenSeparatorLine: Bool = true {
+        didSet {
+            separatorLineView.isHidden = isHiddenSeparatorLine
+        }
+    }
     
     override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        contentView.addSubview(separatorLineView)
+        separatorLineView.snp.makeConstraints { (make) in
+            make.left.bottom.right.equalTo(0.0)
+            make.height.equalTo(1.0)
+        }
+        
         qs_setupSubViews()
         qs_binding()
     }
@@ -57,17 +69,16 @@ open class QSBaseTableViewCell: UITableViewCell, QSBaseViewProtocol {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - 控件
+    // 分隔线
+    private lazy var separatorLineView: UIView = {
+        let view = UIView.init()
+        view.isHidden = true
+        return view
+    }()
+    
     // MARK: - QSBaseViewProtocol
     open func qs_setupSubViews() {
-        // lineView
-        lineView = UIView.init()
-        self.contentView.addSubview(lineView!)
-        lineView!.snp.makeConstraints { (make) in
-            make.left.bottom.right.equalTo(0.0)
-            make.height.equalTo(1.0)
-        }
-        
-        self.selectionStyle = .none
     }
     
     open func qs_binding() {
