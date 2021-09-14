@@ -32,7 +32,9 @@ open class QSBaseTableViewCell: UITableViewCell, QSBaseViewProtocol {
     /// 分隔线颜色
     public var separatorLineColor: UIColor = .black {
         didSet {
+            separatorLineView.isHidden = false
             separatorLineView.backgroundColor = separatorLineColor
+            separatorLineView.superview?.bringSubviewToFront(separatorLineView)
         }
     }
     
