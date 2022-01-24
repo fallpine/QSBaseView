@@ -13,7 +13,7 @@ class QSMyView: QSBaseView {
         self.backgroundColor = .blue
     }
     
-    override func qs_binding() {
+    override func qs_bind() {
         print("绑定数据")
     }
 }

@@ -13,7 +13,7 @@ open class QSBaseCollectionReusableView: UICollectionReusableView, QSBaseViewPro
         super.init(frame: frame)
         
         qs_setupSubViews()
-        qs_binding()
+        qs_bind()
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -24,6 +24,6 @@ open class QSBaseCollectionReusableView: UICollectionReusableView, QSBaseViewPro
     open func qs_setupSubViews() {
     }
     
-    open func qs_binding() {
+    open func qs_bind() {
     }
 }

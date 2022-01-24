@@ -12,7 +12,7 @@ open class QSBaseTableViewHeaderFooterView: UITableViewHeaderFooterView, QSBaseV
     override public init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         qs_setupSubViews()
-        qs_binding()
+        qs_bind()
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -23,6 +23,6 @@ open class QSBaseTableViewHeaderFooterView: UITableViewHeaderFooterView, QSBaseV
     open func qs_setupSubViews() {
     }
     
-    open func qs_binding() {
+    open func qs_bind() {
     }
 }

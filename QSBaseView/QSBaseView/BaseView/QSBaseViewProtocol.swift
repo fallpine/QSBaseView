@@ -12,5 +12,5 @@ import Foundation
     /// 设置界面
     @objc func qs_setupSubViews()
     /// 数据绑定
-    @objc func qs_binding()
+    @objc func qs_bind()
 }

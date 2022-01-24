@@ -15,11 +15,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         view.addSubview(myView)
-        myView.snp.makeConstraints { (make) in
-            make.top.equalTo(100.0)
-            make.centerX.equalToSuperview()
-            make.width.height.equalTo(80.0)
-        }
+        myView.frame = CGRect.init(x: 100.0, y: 100.0, width: 100.0, height: 100.0)
     }
 
     private lazy var myView: QSMyView = {

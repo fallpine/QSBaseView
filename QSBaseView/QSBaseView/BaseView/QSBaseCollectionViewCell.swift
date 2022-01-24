@@ -12,7 +12,7 @@ open class QSBaseCollectionViewCell: UICollectionViewCell, QSBaseViewProtocol {
     override public init(frame: CGRect) {
         super.init(frame: frame)
         qs_setupSubViews()
-        qs_binding()
+        qs_bind()
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -23,6 +23,6 @@ open class QSBaseCollectionViewCell: UICollectionViewCell, QSBaseViewProtocol {
     open func qs_setupSubViews() {
     }
     
-    open func qs_binding() {
+    open func qs_bind() {
     }
 }
