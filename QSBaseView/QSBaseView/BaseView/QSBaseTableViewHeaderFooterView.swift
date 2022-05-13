@@ -11,8 +11,8 @@ import UIKit
 open class QSBaseTableViewHeaderFooterView: UITableViewHeaderFooterView, QSBaseViewProtocol {
     override public init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
-        qs_setupSubViews()
-        qs_bind()
+        qs_layoutSubViews()
+        qs_dataBinding()
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -20,9 +20,9 @@ open class QSBaseTableViewHeaderFooterView: UITableViewHeaderFooterView, QSBaseV
     }
     
     // MARK: - QSBaseViewProtocol
-    open func qs_setupSubViews() {
+    open func qs_layoutSubViews() {
     }
     
-    open func qs_bind() {
+    open func qs_dataBinding() {
     }
 }

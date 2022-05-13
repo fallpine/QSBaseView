@@ -9,11 +9,11 @@
 import UIKit
 
 class QSMyView: QSBaseView {
-    override func qs_setupSubViews() {
+    override func qs_layoutSubViews() {
         self.backgroundColor = .blue
     }
     
-    override func qs_bind() {
+    override func qs_dataBinding() {
         print("绑定数据")
     }
 }

@@ -9,8 +9,8 @@
 import Foundation
 
 @objc public protocol QSBaseViewProtocol {
-    /// 设置界面
-    @objc func qs_setupSubViews()
+    /// 界面布局
+    @objc func qs_layoutSubViews()
     /// 数据绑定
-    @objc func qs_bind()
+    @objc func qs_dataBinding()
 }

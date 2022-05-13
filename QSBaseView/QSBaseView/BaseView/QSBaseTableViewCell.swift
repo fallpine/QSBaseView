@@ -60,8 +60,8 @@ open class QSBaseTableViewCell: UITableViewCell, QSBaseViewProtocol {
     override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        qs_setupSubViews()
-        qs_bind()
+        qs_layoutSubViews()
+        qs_dataBinding()
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -77,9 +77,9 @@ open class QSBaseTableViewCell: UITableViewCell, QSBaseViewProtocol {
     }()
     
     // MARK: - QSBaseViewProtocol
-    open func qs_setupSubViews() {
+    open func qs_layoutSubViews() {
     }
     
-    open func qs_bind() {
+    open func qs_dataBinding() {
     }
 }
