@@ -13,19 +13,16 @@ open class QSBaseTableViewCell: UITableViewCell, QSBaseViewProtocol {
     /// 分隔线左边距
     public var separatorLeftMargin: CGFloat = 0.0 {
         didSet {
-            var frame = separatorLineView.frame
-            frame.origin.x = separatorLeftMargin
-            frame.size.width = UIScreen.main.bounds.size.width - separatorLeftMargin - separatorRightMargin
-            separatorLineView.frame = frame
+            separatorLeftConstraint.constant = separatorLeftMargin
+            contentView.updateConstraints()
         }
     }
     
     /// 分隔线右边距
     public var separatorRightMargin: CGFloat = 0.0 {
         didSet {
-            var frame = separatorLineView.frame
-            frame.size.width = UIScreen.main.bounds.size.width - separatorLeftMargin - separatorRightMargin
-            separatorLineView.frame = frame
+            separatorRightConstraint.constant = separatorRightMargin
+            contentView.updateConstraints()
         }
     }
     
@@ -41,24 +38,27 @@ open class QSBaseTableViewCell: UITableViewCell, QSBaseViewProtocol {
     /// 分隔线高度
     public var separatorHeight: CGFloat = 0.0 {
         didSet {
-            var frame = separatorLineView.frame
-            frame.size.height = separatorHeight
-            separatorLineView.frame = frame
+            separatorHeightConstraint.constant = separatorHeight
+            contentView.updateConstraints()
         }
     }
     
     /// 是否隐藏分隔线
     public var isHiddenSeparator: Bool = true {
         didSet {
-            if separatorLineView.superview == nil {
-                contentView.addSubview(separatorLineView)
-            }
             separatorLineView.isHidden = isHiddenSeparator
         }
     }
     
     override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        contentView.addSubview(separatorLineView)
+        let separatorBottom = NSLayoutConstraint.init(item: separatorLineView, attribute: .bottom, relatedBy: .equal, toItem: contentView, attribute: .bottom, multiplier: 1.0, constant: 0.0)
+        separatorLeftConstraint = NSLayoutConstraint.init(item: separatorLineView, attribute: .left, relatedBy: .equal, toItem: contentView, attribute: .left, multiplier: 1.0, constant: 0.0)
+        separatorRightConstraint = NSLayoutConstraint.init(item: separatorLineView, attribute: .right, relatedBy: .equal, toItem: contentView, attribute: .right, multiplier: 1.0, constant: 0.0)
+        separatorHeightConstraint = NSLayoutConstraint.init(item: separatorLineView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0.0, constant: 1.0 / UIScreen.main.scale)
+        contentView.addConstraints([separatorBottom, separatorLeftConstraint, separatorRightConstraint, separatorHeightConstraint])
         
         qs_layoutSubViews()
         qs_dataBinding()
@@ -68,11 +68,17 @@ open class QSBaseTableViewCell: UITableViewCell, QSBaseViewProtocol {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Property
+    private var separatorLeftConstraint: NSLayoutConstraint!
+    private var separatorRightConstraint: NSLayoutConstraint!
+    private var separatorHeightConstraint: NSLayoutConstraint!
+    
     // MARK: - 控件
     // 分隔线
     private lazy var separatorLineView: UIView = {
         let view = UIView.init()
         view.isHidden = true
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
