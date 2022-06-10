@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "QSBaseView"
-  spec.version      = "2.0.2"
+  spec.version      = "2.0.3"
   spec.summary      = "控件基类."
 
   # This description is used to generate tags and improve search results.
@@ -78,7 +78,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://github.com/fallpine/QSBaseView.git", :tag => "2.0.2" }
+  spec.source       = { :git => "https://github.com/fallpine/QSBaseView.git", :tag => "2.0.3" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
