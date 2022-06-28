@@ -52,6 +52,7 @@ open class QSBaseTableViewCell: UITableViewCell, QSBaseViewProtocol {
     
     override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        contentView.frame = CGRect.init(x: 0.0, y: 0.0, width: UIScreen.main.bounds.size.width, height: 60.0)
         
         contentView.addSubview(separatorLineView)
         let separatorBottom = NSLayoutConstraint.init(item: separatorLineView, attribute: .bottom, relatedBy: .equal, toItem: contentView, attribute: .bottom, multiplier: 1.0, constant: 0.0)
